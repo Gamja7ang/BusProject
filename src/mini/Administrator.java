@@ -100,7 +100,7 @@ public class Administrator extends BasicFrame implements ActionListener {
 		File dir = new File(path);
 		File [] files = dir.listFiles();
 		for(int i = 0; i < files.length; i++) {
-			if ((files[i].isDirectory()) && (id + ".ser").equals(files[i].getName())) {//isDirectory : 디렉토리인가 물어봄, 디렉토리가 아님
+			if (!(files[i].isDirectory()) && (id + ".ser").equals(files[i].getName())) {//isDirectory : 디렉토리인가 물어봄, 디렉토리가 아님
 				// (id + ".ser").equals(files[i].getName()) : 파일 안에있는 이름을 가져와 같은 것인지 확인
 				flag = true; //같은 이름이 있으면  true(로그인 구현, 로그인 시 해당 아이디가 파일 안에 동일한 값이 있는지)
 			}//End of if
